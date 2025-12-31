@@ -1,0 +1,5 @@
+<script>
+// J.S.Bach, BWV846
+// yananonym v20251030
+let p=[],i,b,q,f=(t,j)=>440*2**((t.charCodeAt(j)-69)/12),s="<@CHL<>EJM;>CJM<@CHL<@ELQ<>BEJ;>CJO;<@CH9<@CH29>BH7;>CG7:@CI59>EJ58>AG47<CH459<A259<A+27;A047<@04:<@)59<@*09<?+3;<?,5;<>+57;>+47<@+27<A+27;A+39<B+47<C+27<A+27;A$07:@",C="$059<A<9<9595252$/CGJMJGJGCG>A@>0<@CH";for(b=0;b<35;b++){q=b*16;for(i=0;i<5;i++)[0,3,8,11].forEach(o=>p[q+i+o]=f(s,b*5+i))}for(i=0;i<37;i++)p[528+i]=f(C,i);let a,x=44100,d=.2*x,v=.2,w,g=(F,S)=>{for(let i=0;i<F.length;i++){const h=F[i];if(!h)continue;let e,r=Math.floor(i/16),n=i*d;i>=560?e=578*d:r<33&&(i%8<2||i%8>7)?e=(i-i%8+8)*d:r==33&&i%16<2?e=544*d:r==34&&i%16<2?e=560*d:i+1<F.length?e=(i+1)*d:e=n+d;for(let t=n;t<e&&t<S.length;t++)S[t]+=Math.sin(2*Math.PI*h*(t-n)/x)*v}};window.onclick=()=>{a=new(AudioContext||webkitAudioContext);w=new Float32Array(576*d);g(p,w);let B=a.createBuffer(1,w.length,x);B.copyToChannel(w,0);let s=a.createBufferSource();s.buffer=B;s.connect(a.destination);s.start(0)}
+</script>

@@ -1,0 +1,13 @@
+<title>[ bach ]</title>
+<script>
+// yananonym v20251031
+p=[];r="@,V57,,O@57K7j575@V7K@jM@8,jKO@";s="1BCJH1DNOMADCOM1BCJH1BNHI1DENOADCOGA1BCJ?1BCJ>?DEJ0ADCF05BCL2?DNO23DKF@01CJ@2?1K>2?1K;>0AK:@01B:@51B92?1B=:?14;6A1472A1D;20AD;@01B;>01K;>0AK;6?1E;@01C;>01K;>0AK8:05B";C="8:2?1K1?1?2?2>2>8<CFOMOFOFCFDKBD:1BCJ";u=[922/5];V=(a,b)=>a.charCodeAt(b);
+for(i=0;i<32;)u.push(u[i]*((n=V(r,i++)-21)/10|0)/(n%10));
+for(b=0;b<35;b++)for(i=0;i<5;i++)[0,3,8,11].map(o=>p[b*16+i+o]=u[V(s,b*5+i)-48]);
+for(i=0;i<37;)p[528+i]=u[V(C,i++)-48];
+x=44100;d=.2*x;v=.2;
+g=(F,S)=>{for(i in F){h=F[i];if(!h)continue;n=i*d|0;
+  e=i>=560?572*d:(r=i/16|0)<33&&(i%8<2||i%8>7)?(i-i%8+8)*d:r==33&&i%16<2?544*d:r==34&&i%16<2?560*d:+i+1<F.length?(+i+1)*d:n+d;
+  for(t=n;t<e&&t<S.length;t++)S[t]+=Math.sin(2*Math.PI/x*h*(t-n))*v}}
+onclick=()=>{a=new AudioContext();w=new Float32Array(576*d);g(p,w);B=a.createBuffer(1,w.length,x);B.copyToChannel(w,0);(s=a.createBufferSource()).buffer=B;s.connect(a.destination);s.start()}
+</script>
