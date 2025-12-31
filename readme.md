@@ -1,4 +1,4 @@
-# BWV846 < 1kB.
+# BWV846 < 1kB
 
 Two implementations of Bach's Prelude in C Major BWV 846 from the first book of Das Wohltemperierte, one in 12-TET and one in 5-limit tuning. Each renders as a complete audio waveform in a single click via Web Audio API from less than 1kB of code.
 
