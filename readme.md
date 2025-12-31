@@ -6,7 +6,7 @@ Two implementations of Bach's Prelude in C Major BWV 846 from the first book of 
 
 The encoding strategy compresses pitch data through a Hamiltonian path of intervals mapped to ASCII characters. Each character encodes a just intonation ratio without escape sequences, reducing what would require explicit arrays into single symbols. The full pitch palette occupies minimal space. A variant optimized for alternative tuning goals would require a distinct Hamiltonian path calculation.
 
-Synthesis renders pitches as sine waves with rectangular amplitude envelopes. The score's rhythmic structure preserves differential note durations, with sustained bass figures in the left hand and quick articulated figures in the right hand. Initial development explored smooth attack envelopes, but the semi-random rhythmic quality produced by rectangular envelopes, where clicks occur at waveform resets, proved aesthetically preferred and was chosen over smooth alternatives.
+Synthesis renders pitches as sine waves with rectangular amplitude envelopes. The rhythmic structure preserves note durations from the original score, with sustained notes in the lower voices and staccato in the right hand's part. The semi-random rhythmic quality produced by rectangular envelopes, where clicks occur at waveform resets, proved aesthetically preferred and was chosen over smooth alternatives.
 
 ## Files
 
